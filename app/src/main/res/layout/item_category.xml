@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:foreground="?android:attr/selectableItemBackgroundBorderless">
+
+    <!-- Imagem da Categoria -->
+    <ImageView
+        android:id="@+id/category_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/descr_category"
+        android:paddingBottom="24dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Nome da Categoria -->
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundCategoryText"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/category_image"
+        app:layout_constraintEnd_toEndOf="@+id/category_image"
+        app:layout_constraintStart_toStartOf="@+id/category_image" />
+
+</android.support.constraint.ConstraintLayout>

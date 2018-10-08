@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activitys.PlayActivity">
+
+
+    <!-- Text Title -->
+    <TextView
+        android:background="@drawable/bg_text"
+        android:id="@+id/tv_play_title"
+        android:layout_width="0dp"
+        android:elevation="@dimen/elevationDefault"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="6"
+        android:padding="8dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Text Questions -->
+    <TextView
+        android:id="@+id/tv_play_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_play_title" />
+
+
+    <!-- Imagem - Flag / Map -->
+    <ImageView
+        android:id="@+id/iv_play_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/descr_play_question"
+        app:layout_constraintBottom_toTopOf="@+id/tv_play_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_play_title" />
+
+    <!-- Text Region -->
+    <TextView
+        android:id="@+id/tv_play_region"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@+id/tv_play_quantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_play_image" />
+
+    <!-- Text Score -->
+    <TextView
+        android:id="@+id/tv_play_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_score_play"
+        android:elevation="@dimen/elevationDefault"
+        android:gravity="start|center_vertical"
+        android:padding="8dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_play_count_down_timer"
+        app:layout_constraintEnd_toStartOf="@+id/tv_play_quantity"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Text Quantity -->
+    <TextView
+        android:id="@+id/tv_play_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_quantity_play"
+        android:elevation="@dimen/elevationDefault"
+        android:gravity="end|center_vertical"
+        android:padding="8dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_play_count_down_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_play_score" />
+
+    <!-- Text CountDownTimer  -->
+    <TextView
+        android:id="@+id/tv_play_count_down_timer"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_count_down_timer"
+        android:elevation="@dimen/elevationDefault"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <!-- ProgressBar Tempo restante -->
+    <ProgressBar
+        android:id="@+id/pb_play_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_play_count_down_timer" />
+
+    <!-- But Answer A -->
+    <Button
+        android:id="@+id/but_play_a"
+        style="@style/MyButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+
+        android:theme="@style/MyThemeButtons"
+        app:layout_constraintEnd_toStartOf="@+id/but_play_b"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_play_count_down_timer" />
+
+    <!-- But Answer B -->
+    <Button
+        android:id="@+id/but_play_b"
+        style="@style/MyButton"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:theme="@style/MyThemeButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/but_play_a"
+        app:layout_constraintTop_toBottomOf="@+id/tv_play_count_down_timer" />
+
+    <!-- But Answer C -->
+    <Button
+        android:id="@+id/but_play_c"
+        style="@style/MyButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:theme="@style/MyThemeButtons"
+        app:layout_constraintEnd_toStartOf="@+id/but_play_d"
+        app:layout_constraintStart_toStartOf="@+id/but_play_a"
+        app:layout_constraintTop_toBottomOf="@+id/but_play_a" />
+
+    <!-- But Answer D -->
+    <Button
+        android:id="@+id/but_play_d"
+        style="@style/MyButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/MyThemeButtons"
+        app:layout_constraintEnd_toEndOf="@+id/but_play_b"
+        app:layout_constraintStart_toEndOf="@+id/but_play_c"
+        app:layout_constraintTop_toBottomOf="@+id/but_play_b" />
+
+</android.support.constraint.ConstraintLayout>
