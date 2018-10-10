@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activitys.DoneActivity">
 
-
     <!-- Text Title -->
     <TextView
         android:id="@+id/tv_done_category"
@@ -17,15 +16,14 @@
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
-        android:paddingStart="16dp"
-        android:paddingTop="16dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
         android:paddingEnd="8dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <!-- Text Type -->
     <TextView
@@ -35,26 +33,25 @@
         android:background="@drawable/bg_text"
         android:elevation="@dimen/elevationDefault"
         android:gravity="center"
-        android:padding="16dp"
-        android:textColor="@color/colorWhite"
+        android:padding="8dp"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_done_category"
         app:layout_constraintStart_toStartOf="@+id/tv_done_category"
         app:layout_constraintTop_toBottomOf="@+id/tv_done_category" />
-
 
     <!-- Pontuação -->
     <TextView
         android:id="@+id/tv_done_score"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/elevationDefault"
-        android:background="@drawable/bg_text_info"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:padding="16dp"
         android:layout_marginBottom="8dp"
-        android:textColor="@color/colorWhite"
+        android:background="@drawable/bg_text_info"
+        android:elevation="@dimen/elevationDefault"
+        android:padding="16dp"
+        android:textColor="@color/colorFont"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/pb_done_progress"
@@ -72,7 +69,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tv_done_score"
@@ -87,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/but_done_try_again"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -99,22 +96,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/bg_button"
         android:elevation="@dimen/elevationDefault"
         android:foreground="?android:attr/selectableItemBackgroundBorderless"
         android:text="@string/text_done_try_again"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="24sp"
         android:textStyle="bold"
         android:theme="@style/MyButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_done_type" />
-
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Informação Recorde -->
     <TextView
@@ -124,18 +119,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp"
         android:elevation="@dimen/elevationDefault"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="4"
-        android:textColor="@color/colorWhite"
+        android:padding="16dp"
+        android:textColor="@color/colorFont"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/but_done_try_again" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_done_type" />
 
 </android.support.constraint.ConstraintLayout>

@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- Cor do background em todas as activitys -->
-        <item name="android:background">@color/colorBackground</item>
+        <item name="android:background">@color/colorBlack</item>
 
         <!-- Resolve problema de renderização do bottomNavigation api 28 -->
         <item name="bottomNavigationStyle">@style/Widget.Design.BottomNavigationView</item>
@@ -29,7 +29,7 @@
 
         <item name="android:background">@drawable/bg_button</item>
         <item name="android:elevation">@dimen/elevationDefault</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorFont</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>

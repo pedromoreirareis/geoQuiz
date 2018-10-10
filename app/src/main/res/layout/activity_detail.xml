@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activitys.DetailActivity">
 
-    <!-- Text Title -->
+    <!-- Titulo dos detalhes -->
     <TextView
         android:id="@+id/tv_detail_title"
         android:layout_width="0dp"
@@ -19,13 +19,12 @@
         android:paddingStart="16dp"
         android:paddingTop="16dp"
         android:paddingEnd="8dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <!-- Text Type -->
     <TextView
@@ -37,7 +36,7 @@
         android:gravity="start|center_vertical"
         android:padding="16dp"
         android:text="@string/text_detail_type"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_detail_score"
         app:layout_constraintHorizontal_bias="0.5"
@@ -54,14 +53,14 @@
         android:gravity="end|center_vertical"
         android:padding="16dp"
         android:text="@string/text_detail_score"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_detail_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_title" />
 
-
+    <!-- Recyclerview detalhes -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_detail"
         android:layout_width="0dp"

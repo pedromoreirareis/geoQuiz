@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activitys.TypeActivity">
 
+    <!-- Titulo -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -15,12 +16,13 @@
         android:padding="8dp"
         android:elevation="@dimen/elevationDefault"
         android:text="@string/text_type_choice_quiz"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Capitais -->
     <Button
         android:id="@+id/but_type_capitais"
         style="@style/MyButton"
@@ -39,6 +41,7 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <!-- Bandeiras -->
     <Button
         android:id="@+id/but_type_flags"
         style="@style/MyButton"
@@ -54,6 +57,7 @@
         app:layout_constraintStart_toStartOf="@+id/but_type_capitais"
         app:layout_constraintTop_toBottomOf="@+id/but_type_capitais" />
 
+    <!-- Mapas -->
     <Button
         android:id="@+id/but_type_maps"
         style="@style/MyButton"

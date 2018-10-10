@@ -7,7 +7,7 @@
     tools:context=".fragments.RankingFragment">
 
 
-    <!-- Text Title -->
+    <!-- Categoria -->
     <TextView
         android:id="@+id/tv_ranking_category"
         android:layout_width="0dp"
@@ -19,13 +19,15 @@
         android:maxLines="6"
         android:padding="16dp"
         android:text="@string/text_frag_ranking_category"
-        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_ranking_score"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Pontuação -->
     <TextView
         android:id="@+id/tv_ranking_score"
         android:layout_width="0dp"
@@ -36,13 +38,13 @@
         android:maxLines="6"
         android:padding="16dp"
         android:text="@string/text_frag_ranking_score"
-        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textColor="@color/colorFont"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_ranking_category"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_frag_ranking"

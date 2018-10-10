@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
         app:itemIconTint="@drawable/nav_item_state_color"
         app:itemTextColor="@drawable/nav_item_state_color"
         app:menu="@menu/menu_bottom" />

@@ -98,8 +98,6 @@ public class DoneActivity extends AppCompatActivity implements Button.OnClickLis
 
         }
 
-
-
         mTvType.setText(typeTtitle);
         mTvCategory.setText(category);
 
@@ -118,7 +116,7 @@ public class DoneActivity extends AppCompatActivity implements Button.OnClickLis
 
         //  Mostra a pontuação e a quantidade de resposta certa
         mTvScore.setText(String.format(getString(R.string.showScore), score));
-        mTvQuantity.setText(String.format(getString(R.string.showTotal), corrects, quantity));
+        mTvQuantity.setText(String.format(getString(R.string.showTotalDone), corrects, quantity));
 
         //  Mostra o progresso corretas / total
         mPbProgress.setMax(quantity*10);

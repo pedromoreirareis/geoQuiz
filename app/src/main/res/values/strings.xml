@@ -3,6 +3,7 @@
 
     <string name="showScore">%1$d pontos</string>
     <string name="showTotal">%1$d de %2$d</string>
+    <string name="showTotalDone">%1$d de %2$d perguntas</string>
     <string name="showRecord">Novo recorde. %1$d pontos.</string>
     <string name="showNoRecord">Não foi dessa vez. Seu recorde é %1$d pontos.</string>
 

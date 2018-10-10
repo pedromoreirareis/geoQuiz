@@ -32,7 +32,7 @@
         android:maxLines="1"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFont"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_item_category_image"
         app:layout_constraintEnd_toEndOf="@+id/iv_item_category_image"
