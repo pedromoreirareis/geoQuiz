@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- Cor do background em todas as activitys -->
-        <item name="android:background">@color/colorBlack</item>
+        <item name="android:background">@color/colorBackground</item>
 
         <!-- Resolve problema de renderização do bottomNavigation api 28 -->
         <item name="bottomNavigationStyle">@style/Widget.Design.BottomNavigationView</item>

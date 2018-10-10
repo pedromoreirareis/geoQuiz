@@ -15,7 +15,7 @@
     <color name="colorButton">#0044ff</color>
     <color name="colorFont">#FFFFFF</color>
 
-    <color name="colorBackground">#e01417e6</color>
+    <color name="colorBackground">#000000</color>
     <color name="colorBackgroundTransparent">#00ffffff</color>
     <color name="colorBackgroundScoreTotal">#605f5f</color>
     <color name="colorBackgroundCategoryText">#63332f2f</color>
