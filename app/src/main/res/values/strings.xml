@@ -3,9 +3,11 @@
 
     <string name="showScore">%1$d pontos</string>
     <string name="showTotal">%1$d de %2$d</string>
+    <string name="showRecord">Novo recorde. %1$d pontos.</string>
+    <string name="showNoRecord">Não foi dessa vez. Seu recorde é %1$d pontos.</string>
 
     <string name="question_info_capital">Qual a capital?</string>
-    <string name="question_info_flag">Essa Bandeira é:</string>
+    <string name="question_info_flag">Essa Bandeira pertence há:</string>
     <string name="question_info_map">A área em destaque é:</string>
 
     <string name="menu_categorias">Categorias</string>
@@ -13,4 +15,14 @@
 
     <string name="descr_category">Imagem da categoria</string>
     <string name="descr_play_question">Imagem para pergunta</string>
+
+    <string name="text_detail_type">Tipo</string>
+    <string name="text_detail_score">Pontuação</string>
+    <string name="text_done_try_again">Tente novamente</string>
+    <string name="text_type_choice_quiz">Escolha o tipo de Quiz</string>
+    <string name="text_type_capitais">Capitais</string>
+    <string name="text_type_flags">Bandeiras</string>
+    <string name="text_type_maps">Mapas</string>
+    <string name="text_frag_ranking_category">Categoria</string>
+    <string name="text_frag_ranking_score">Pontuação</string>
 </resources>

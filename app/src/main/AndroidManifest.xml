@@ -9,20 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activitys.MainActivity"
+        <activity
+            android:name=".activitys.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="www.facebook.com"
+                    android:pathPrefix="/photos/?ref=page_internal" />
+            </intent-filter>
         </activity>
-        <activity android:name=".activitys.TypeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activitys.PlayActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activitys.DoneActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activitys.TypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activitys.PlayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activitys.DoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activitys.DetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

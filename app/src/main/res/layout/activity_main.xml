@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".activitys.MainActivity">
 
     <!-- Frame que sera o parent dos Fragments -->
@@ -21,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+
         app:itemIconTint="@drawable/nav_item_state_color"
         app:itemTextColor="@drawable/nav_item_state_color"
         app:menu="@menu/menu_bottom" />

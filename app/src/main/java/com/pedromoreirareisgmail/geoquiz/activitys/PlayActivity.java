@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.pedromoreirareisgmail.geoquiz.Commons.Common;
 import com.pedromoreirareisgmail.geoquiz.Commons.Const;
-import com.pedromoreirareisgmail.geoquiz.Commons.Wait;
 import com.pedromoreirareisgmail.geoquiz.Game.Alternatives;
 import com.pedromoreirareisgmail.geoquiz.Game.Controls;
 import com.pedromoreirareisgmail.geoquiz.R;
@@ -45,8 +44,6 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
     private long mTimeout = 0;
     private long mInterval = 0;
     private long mTimeAnswer = 0;
-
-    private boolean isEndQuestions = false;
 
     private TextView mTvTitle;
     private TextView mTvQuestion;
@@ -214,7 +211,7 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
                     int imageFlagId = getResources().getIdentifier(imageFlag, "drawable", getPackageName());
 
                     //  Coloca imagem no imageview
-                    mIvImagem.setImageDrawable(getResources().getDrawable(imageFlagId));
+                    mIvImagem.setImageDrawable(getDrawable(imageFlagId));
 
                     //  Coloca a região do pais/estado
                     mTvRegion.setText(mListQuestions.get(currentIndex).getRegion().trim());
@@ -237,7 +234,7 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
                     int imageMapId = getResources().getIdentifier(imageMap, "drawable", getPackageName());
 
                     //  Coloca a imagem no imageview
-                    mIvImagem.setImageDrawable(getResources().getDrawable(imageMapId));
+                    mIvImagem.setImageDrawable(getDrawable(imageMapId));
 
                     //  Coloca a região do pais/estado
                     mTvRegion.setText(mListQuestions.get(currentIndex).getRegion().trim());
@@ -269,9 +266,7 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
 
         } else {
 
-            isEndQuestions = true;
             endQuestions();
-
         }
     }
 
@@ -333,8 +328,6 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
 
                 }else{  //  ERRADA
 
-                    isEndQuestions = true;
-
                     endQuestions();
                 }
             }
@@ -366,7 +359,6 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
     @Override
     public void onBackPressed() {
 
-        isEndQuestions = true;
         endQuestions();
     }
 
@@ -374,15 +366,11 @@ public class PlayActivity extends AppCompatActivity implements Button.OnClickLis
     protected void onStop() {
         super.onStop();
 
-        verifyEndQuestions();
-    }
+        if(mCountDownTimer != null){
 
-    private void verifyEndQuestions() {
-
-        if (!isEndQuestions) {
-
-            Wait.delay(1000);
-            endQuestions();
+            mCountDownTimer.cancel();
         }
+
     }
+
 }

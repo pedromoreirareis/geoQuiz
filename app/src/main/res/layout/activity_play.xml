@@ -4,23 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".activitys.PlayActivity">
 
 
     <!-- Text Title -->
     <TextView
-        android:background="@drawable/bg_text"
         android:id="@+id/tv_play_title"
         android:layout_width="0dp"
-        android:elevation="@dimen/elevationDefault"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_text"
+        android:elevation="@dimen/elevationDefault"
         android:ellipsize="end"
         android:gravity="start|center_vertical"
         android:maxLines="6"
         android:padding="8dp"
         android:textColor="@color/colorWhite"
-        android:textSize="32sp"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ProgressBar Tempo restante -->
+    <ProgressBar
+        android:id="@+id/pb_play_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,9 +41,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +89,10 @@
         android:background="@drawable/bg_score_play"
         android:elevation="@dimen/elevationDefault"
         android:gravity="start|center_vertical"
-        android:padding="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="16dp"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -96,7 +110,10 @@
         android:background="@drawable/bg_quantity_play"
         android:elevation="@dimen/elevationDefault"
         android:gravity="end|center_vertical"
-        android:padding="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="8dp"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -121,17 +138,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.72" />
 
-    <!-- ProgressBar Tempo restante -->
-    <ProgressBar
-        android:id="@+id/pb_play_progress"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_play_count_down_timer" />
 
     <!-- But Answer A -->
     <Button
@@ -140,8 +146,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
 
         android:theme="@style/MyThemeButtons"
         app:layout_constraintEnd_toStartOf="@+id/but_play_b"
@@ -156,8 +162,8 @@
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:theme="@style/MyThemeButtons"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +178,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="2dp"
         android:theme="@style/MyThemeButtons"
         app:layout_constraintEnd_toStartOf="@+id/but_play_d"
         app:layout_constraintStart_toStartOf="@+id/but_play_a"
@@ -184,7 +190,7 @@
         style="@style/MyButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
         android:theme="@style/MyThemeButtons"
         app:layout_constraintEnd_toEndOf="@+id/but_play_b"

@@ -10,13 +10,6 @@ public class AnswerBut {
     public AnswerBut() {
     }
 
-    public AnswerBut(String a, String b, String c, String d) {
-        A = a;
-        B = b;
-        C = c;
-        D = d;
-    }
-
     public String getA() {
         return A;
     }

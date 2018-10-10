@@ -23,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "";
     private static SQLiteDatabase mDatabase;
-    private Context mContext;
+    private final Context mContext;
 
     public DbHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -50,7 +50,7 @@ public class DbHelper extends SQLiteOpenHelper {
         mDatabase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
-    public void createDatabase() throws IOException {
+    public void createDatabase() throws IOException{
 
 
         boolean isDBExists = checkDataBase();

@@ -1,6 +1,5 @@
 package com.pedromoreirareisgmail.geoquiz.activitys;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -20,18 +19,13 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-
-    private Context mContext;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mContext = MainActivity.this;
-
+        
         //  Cria DB se não existe
-        DbHelper dbHelper = new DbHelper(mContext);
+        DbHelper dbHelper = new DbHelper(MainActivity.this);
         try {
 
             dbHelper.createDatabase();

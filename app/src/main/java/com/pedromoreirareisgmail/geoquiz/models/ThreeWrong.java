@@ -9,12 +9,6 @@ public class ThreeWrong {
     public ThreeWrong() {
     }
 
-    public ThreeWrong(String first, String second, String third) {
-        this.first = first;
-        this.second = second;
-        this.third = third;
-    }
-
     public String getFirst() {
         return first;
     }

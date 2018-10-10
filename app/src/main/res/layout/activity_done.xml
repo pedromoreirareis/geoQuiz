@@ -4,12 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".activitys.DoneActivity">
 
 
+    <!-- Text Title -->
+    <TextView
+        android:id="@+id/tv_done_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/elevationDefault"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!-- Text Type -->
+    <TextView
+        android:id="@+id/tv_done_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_text"
+        android:elevation="@dimen/elevationDefault"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_done_category"
+        app:layout_constraintStart_toStartOf="@+id/tv_done_category"
+        app:layout_constraintTop_toBottomOf="@+id/tv_done_category" />
 
 
     <!-- Pontuação -->
@@ -17,13 +48,16 @@
         android:id="@+id/tv_done_score"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:elevation="@dimen/elevationDefault"
+        android:background="@drawable/bg_text_info"
         android:layout_marginStart="16dp"
-        android:textColor="@color/colorFont"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_done_quantity"
+        app:layout_constraintBottom_toTopOf="@+id/pb_done_progress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -31,14 +65,17 @@
     <TextView
         android:id="@+id/tv_done_quantity"
         android:layout_width="0dp"
+        android:background="@drawable/bg_text_info"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:elevation="@dimen/elevationDefault"
+        android:padding="16dp"
         android:layout_marginStart="16dp"
-        android:textColor="@color/colorFont"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pb_done_progress"
+        app:layout_constraintBottom_toTopOf="@+id/tv_done_score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -48,9 +85,9 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/but_done_try_again"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,14 +98,14 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_button"
         android:elevation="@dimen/elevationDefault"
         android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        android:text="Tente novamente"
+        android:text="@string/text_done_try_again"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -76,8 +113,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_done_type" />
 
 
+    <!-- Informação Recorde -->
+    <TextView
+        android:id="@+id/tv_done_info_record"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        android:elevation="@dimen/elevationDefault"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="4"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_done_try_again" />
 
 </android.support.constraint.ConstraintLayout>

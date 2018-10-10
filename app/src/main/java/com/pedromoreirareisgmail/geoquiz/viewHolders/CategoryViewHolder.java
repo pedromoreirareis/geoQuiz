@@ -11,16 +11,16 @@ import com.pedromoreirareisgmail.geoquiz.interfaces.ItemClickListener;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public ImageView ivCategoryImage;
-    public TextView tvCategoryName;
+    public final ImageView ivCategoryImage;
+    public final TextView tvCategoryName;
     private ItemClickListener itemClickListener;
 
 
     public CategoryViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        ivCategoryImage = itemView.findViewById(R.id.category_image);
-        tvCategoryName = itemView.findViewById(R.id.category_name);
+        ivCategoryImage = itemView.findViewById(R.id.iv_item_category_image);
+        tvCategoryName = itemView.findViewById(R.id.tv_item_category_name);
 
         itemView.setOnClickListener(this);
     }

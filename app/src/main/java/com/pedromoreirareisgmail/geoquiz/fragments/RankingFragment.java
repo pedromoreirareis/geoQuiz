@@ -3,6 +3,7 @@ package com.pedromoreirareisgmail.geoquiz.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,11 +42,11 @@ public class RankingFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ranking, container, false);
 
-        mRv = view.findViewById(R.id.rv_ranking);
+        mRv = view.findViewById(R.id.rv_frag_ranking);
         mRv.setHasFixedSize(true);
         mRv.setLayoutManager( new LinearLayoutManager(mContext));
 
@@ -59,9 +60,6 @@ public class RankingFragment extends Fragment {
         RankingAdapter adapter = new RankingAdapter(mContext,searchCategorys());
 
         mRv.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
-
     }
 
     private List<Category> searchCategorys() {

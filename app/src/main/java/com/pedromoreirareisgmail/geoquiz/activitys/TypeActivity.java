@@ -36,18 +36,21 @@ public class TypeActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.but_type_capitais:
                 Common.gameType = Common.TYPE_CAPITAIS;
+                Common.gameTypeString = Common.TYPE_STRING_CAPITAL;
                 startActivity(toPlay);
                 finish();
                 break;
 
             case R.id.but_type_flags:
                 Common.gameType = Common.TYPE_FLAGS;
+                Common.gameTypeString = Common.TYPE_STRING_FLAG;
                 startActivity(toPlay);
                 finish();
                 break;
 
             case R.id.but_type_maps:
                 Common.gameType = Common.TYPE_MAPS;
+                Common.gameTypeString = Common.TYPE_STRING_MAP;
                 startActivity(toPlay);
                 finish();
                 break;

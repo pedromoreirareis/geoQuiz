@@ -10,7 +10,6 @@ import com.pedromoreirareisgmail.geoquiz.Commons.Const;
 import com.pedromoreirareisgmail.geoquiz.models.Answer;
 import com.pedromoreirareisgmail.geoquiz.models.Category;
 import com.pedromoreirareisgmail.geoquiz.models.Question;
-import com.pedromoreirareisgmail.geoquiz.models.Ranking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -161,11 +160,11 @@ public class Crud {
         return listAnswerByCategory;
     }
 
-    public static List<Ranking> getScore(String category, Context context) {
+    public static int getIdByCategoryAndType(String category, String type, Context context) {
 
-        String[] sellectionCategory = new String[]{category};
+        String[] sellectionCategory = new String[]{category, type};
 
-        List<Ranking> listRankingByCategory = new ArrayList<>();
+        int id = -1;
 
         DbHelper dbHelper = new DbHelper(context);
 
@@ -174,26 +173,101 @@ public class Crud {
         try (SQLiteDatabase db = dbHelper.getReadableDatabase()) {
 
             cursor = db.rawQuery(
-                    "SELECT * FROM Rankings WHERE Category = ?",
+                    "SELECT Id FROM Rankings WHERE Category = ? AND Type = ?",
                     sellectionCategory
             );
 
             if (cursor == null) {
 
-                return null;
+                return -1;
             }
 
             cursor.moveToFirst();
 
             do {
 
-                Ranking ranking = new Ranking(
-                        cursor.getInt(cursor.getColumnIndex(Const.RANKINGS_ID)),
-                        cursor.getInt(cursor.getColumnIndex(Const.RANKINGS_SCORE)),
-                        cursor.getString(cursor.getColumnIndex(Const.RANKINGS_CATEGORY))
-                );
+                id = cursor.getInt(cursor.getColumnIndex(Const.RANKINGS_ID));
 
-                listRankingByCategory.add(ranking);
+            } while (cursor.moveToNext());
+
+            cursor.close();
+
+        } catch (Exception e) {
+
+            Log.d(Const.LOG_EXCEPTIONS, "Exception getIdByCategoryAndType: " + e.toString());
+        }
+
+        return id;
+    }
+
+    public static int getScoreByCategoryAndType(String category, String type, Context context) {
+
+        String[] sellectionCategory = new String[]{category, type};
+
+        int value = 0;
+
+        DbHelper dbHelper = new DbHelper(context);
+
+        Cursor cursor;
+
+        try (SQLiteDatabase db = dbHelper.getReadableDatabase()) {
+
+            //  Retorna
+            cursor = db.rawQuery(
+                    "SELECT MAX(Score) AS ScoreMax FROM Rankings WHERE Category = ? AND Type = ?",
+                    sellectionCategory
+            );
+
+            if (cursor == null) {
+
+                return 0;
+            }
+
+            cursor.moveToFirst();
+
+            do {
+
+                value = cursor.getInt(cursor.getColumnIndex("ScoreMax"));
+
+            } while (cursor.moveToNext());
+
+            cursor.close();
+
+        } catch (Exception e) {
+
+            Log.d(Const.LOG_EXCEPTIONS, "Exception getScoreByCategoryAndType: " + e.toString());
+        }
+
+        return value;
+    }
+
+    public static int getSumScoreByCategory(String category, Context context) {
+
+        String[] sellectionCategory = new String[]{category};
+
+        int sum = 0;
+
+        DbHelper dbHelper = new DbHelper(context);
+
+        Cursor cursor;
+
+        try (SQLiteDatabase db = dbHelper.getReadableDatabase()) {
+
+            cursor = db.rawQuery(
+                    "SELECT SUM(Score) AS SumScore FROM Rankings WHERE Category = ?",
+                    sellectionCategory
+            );
+
+            if (cursor == null) {
+
+                return 0;
+            }
+
+            cursor.moveToFirst();
+
+            do {
+
+                sum = cursor.getInt(cursor.getColumnIndex("SumScore"));
 
             } while (cursor.moveToNext());
 
@@ -204,19 +278,51 @@ public class Crud {
             Log.d(Const.LOG_EXCEPTIONS, "Exception getScoreByCategory: " + e.toString());
         }
 
-        return listRankingByCategory;
+        return sum;
     }
 
-    public static void insertScore(int score, String category, Context context) {
+    public static void insertScore(int score, String category, String type, Context context) {
 
         DbHelper dbHelper = new DbHelper(context);
 
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        try (SQLiteDatabase db = dbHelper.getWritableDatabase()) {
 
-        ContentValues values = new ContentValues();
-        values.put(Const.RANKINGS_SCORE, score);
-        values.put(Const.RANKINGS_CATEGORY, category);
+            ContentValues values = new ContentValues();
+            values.put(Const.RANKINGS_SCORE, score);
+            values.put(Const.RANKINGS_CATEGORY, category);
+            values.put(Const.RANKINGS_TYPE, type);
 
-        db.insert(Const.TABLE_RANKINGS, null, values);
+            db.insert(Const.TABLE_RANKINGS, null, values);
+
+        } catch (Exception e) {
+
+            Log.d(Const.LOG_EXCEPTIONS, "Exception insertScore: " + e.toString());
+        }
+
+
+    }
+
+    public static void updateScore(int id, int score, String category, String type, Context context) {
+
+        String idUpdate = "Id = ?";
+        String[] sellectionArgs = new String[]{String.valueOf(id)};
+
+        DbHelper dbHelper = new DbHelper(context);
+
+        try (SQLiteDatabase db = dbHelper.getWritableDatabase()) {
+
+            ContentValues values = new ContentValues();
+            values.put(Const.RANKINGS_SCORE, score);
+            values.put(Const.RANKINGS_CATEGORY, category);
+            values.put(Const.RANKINGS_TYPE, type);
+
+            db.update(Const.TABLE_RANKINGS, values, idUpdate, sellectionArgs);
+
+        } catch (Exception e) {
+
+            Log.d(Const.LOG_EXCEPTIONS, "Exception updateScore: " + e.toString());
+        }
+
+
     }
 }

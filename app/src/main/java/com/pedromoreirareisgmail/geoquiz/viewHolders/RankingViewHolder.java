@@ -10,15 +10,15 @@ import com.pedromoreirareisgmail.geoquiz.interfaces.ItemClickListener;
 
 public class RankingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView tvCategory;
-    public TextView tvScore;
+    public final TextView tvCategory;
+    public final TextView tvScore;
     private ItemClickListener itemClickListener;
 
     public RankingViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        tvCategory = itemView.findViewById(R.id.raking_category);
-        tvScore = itemView.findViewById(R.id.raking_score);
+        tvCategory = itemView.findViewById(R.id.tv_item_raking_category);
+        tvScore = itemView.findViewById(R.id.tv_item_raking_score);
 
         itemView.setOnClickListener(this);
     }

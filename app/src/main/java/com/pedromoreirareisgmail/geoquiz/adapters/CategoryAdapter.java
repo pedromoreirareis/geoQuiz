@@ -9,21 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pedromoreirareisgmail.geoquiz.Commons.Common;
-import com.pedromoreirareisgmail.geoquiz.Commons.Const;
 import com.pedromoreirareisgmail.geoquiz.R;
 import com.pedromoreirareisgmail.geoquiz.activitys.TypeActivity;
 import com.pedromoreirareisgmail.geoquiz.interfaces.ItemClickListener;
-import com.pedromoreirareisgmail.geoquiz.models.Category;
+import com.pedromoreirareisgmail.geoquiz.models.CategoryImage;
 import com.pedromoreirareisgmail.geoquiz.viewHolders.CategoryViewHolder;
 
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
 
-    private Context mContext;
-    private List<Category> mList;
+    private final Context mContext;
+    private final List<CategoryImage> mList;
 
-    public CategoryAdapter(Context context, List<Category> list) {
+    public CategoryAdapter(Context context, List<CategoryImage> list) {
         mContext = context;
         mList = list;
     }
@@ -42,48 +41,27 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
 
         //  Recebe o nome da categoria
-        String categoryName = mList.get(position).getName();
+        String category = mList.get(position).getCategory();
 
         //  Coloca o nome da categoria no TextView
-        holder.tvCategoryName.setText(categoryName);
+        holder.tvCategoryName.setText(category);
 
         //  Atribui imagem a categoria
-        if (categoryName.equals(Const.CATEGORY_AFRICA)) {
+        int imageId = mContext.getResources().getIdentifier(
+                mList.get(position).getImage(),
+                "drawable",
+                mContext.getPackageName()
+        );
 
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_africa));
+        holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(imageId));
 
-        } else if (categoryName.equals(Const.CATEGORY_AMERICA)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_america));
-
-        } else if (categoryName.equals(Const.CATEGORY_ASIA)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_asia));
-
-        } else if (categoryName.equals(Const.CATEGORY_ESTADOS)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_estados));
-
-        } else if (categoryName.equals(Const.CATEGORY_EUROPA)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_europa));
-
-        } else if (categoryName.equals(Const.CATEGORY_OCEANIA)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_oceania));
-
-        } else if (categoryName.equals(Const.CATEGORY_TERRITORIOS)) {
-
-            holder.ivCategoryImage.setImageDrawable(mContext.getDrawable(R.drawable.category_territorios));
-
-        }
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
 
                 //  Categoria que o usuário escolheu para jogar
-                Common.gameCategory = mList.get(position).getName();
+                Common.gameCategory = mList.get(position).getCategory();
 
                 //  Vai para activity Type para escolher tipo de jogo
                 Intent toType = new Intent(mContext, TypeActivity.class);
